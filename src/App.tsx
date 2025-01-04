@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { fetchProducts } from "./services/productService.ts";
-import ProductCard from "./components/ProductCard.tsx";
+import { fetchProducts } from "./services/productService";
+import ProductCard from "./components/ProductCard";
 import "./App.css";
 
 interface Product {
@@ -30,6 +30,9 @@ const App: React.FC = () => {
 
   return (
     <div className="product-grid">
+      {/* showing just five products we can remove this part .slice(0,5)
+      if we want to see all products
+      */}
       {products.slice(0,5).map((product) => (
         <ProductCard
           key={product.id}
