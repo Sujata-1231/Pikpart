@@ -15,7 +15,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product, onDelete }) => {
   const [quantity, setQuantity] = useState(1);
 
-  
+
   const increaseQuantity = () => {
     if (quantity < product.stock) setQuantity(quantity + 1);
   };
@@ -24,7 +24,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onDelete }) => {
     // quantity should not be equal to less than or equal to zero
     if (quantity > 1) setQuantity(quantity - 1);
   };
-
   return (
     <div className="product-card">
       <img src={product.thumbnail} alt={product.title} />
